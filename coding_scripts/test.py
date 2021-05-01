@@ -1,39 +1,44 @@
 
 
-def purify( email):
-        
-    email_parts=email.rsplit("@") #separate before and after at 
-    plus_idx = email_parts[0].find("+")
-    
-    
-    local = (email_parts[0])[:plus_idx] if plus_idx != -1 else email_parts[0]
-    local =local.split(".")
-    local = "".join(local) 
-    
-    return local + "@"+ email_parts[1]
-        
-    
-def numUniqueEmails( emails):
-    
-    emails = { purify(email)  for email in emails }
-    
-    
-    return len(emails)
-
-
 
 
 
 def main():
+
+    def func(ls) :
+        ls.remove(1)
+
+    
+    myls=[1,2,3,2]
+
+    func(myls)
+
+    print (myls)
+        
+
+
+    
+
+
+
+    
+ 
+
    
-   import itertools
-   tree=[1,1,1,2,2,1,1,3,3]
-   blocks = [(k, len(list(v)))for k, v in itertools.groupby(tree)]
+# def main ():
+    
+#     A = [1,5,6,14,15]
 
-    print (blocks)
+#     A.sort() #ascending
+  
+#     if len(A)> 4 :
+#         MIO= min([   abs(A[3] -A[len(A)-1]),    abs( A[0] - A[len(A)-4] ),    abs(A[1]- A[len(A)-3] ),    abs(  A[2]- A[len(A)-2] )    ] )    
+#     else:
+#         # making the 3 changes will always give me the diff equal to 0
+#         MIO= 0
 
 
-
+#     print(MIO)
 
 if __name__ == '__main__' :
     main()
